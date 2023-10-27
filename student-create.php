@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!doctype html>
 <html lang="pt-br">
   <head>
@@ -12,6 +16,9 @@
 </head>
 <body>
     <main class="container mt-5">
+
+    <?php include('mensagem.php') ?>
+
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
