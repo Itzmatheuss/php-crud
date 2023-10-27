@@ -8,7 +8,7 @@ if(isset($_POST['salvar_aluno'])){
     $phone = mysqli_real_escape_string($con,$_POST['phone']);
     $curso = mysqli_real_escape_string($con,$_POST['curso']);
 
-    $query = "INSERT INTO alunos (nome, email, telefone, curso) VALUES (1,'$email','$phone','$curso')";
+    $query = "INSERT INTO alunos (nome, email, telefone, curso) VALUES ('$name','$email','$phone','$curso')";
 
     $query_run = mysqli_query($con,$query);
 
