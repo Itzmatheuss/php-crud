@@ -24,7 +24,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Student Details
+                        <h4>Alunos registrados
                             <a href="student-create.php" class="btn btn-primary float-end">Adicionar Aluno</a>
                         </h4>
                     </div>
