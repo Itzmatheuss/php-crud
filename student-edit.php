@@ -43,11 +43,13 @@ require 'dbcon.php';
                                 $aluno = mysqli_fetch_array($query_run);
                                 ?>
                                 <form action="code.php" method="POST">
+
+
                                     <input type="hidden" name="aluno_id" value="<?= $aluno['id']; ?>">
 
                                     <div class="mb-3">
                                         <label>Nome do Aluno</label>
-                                        <input type="text" name="name" value="<?=$aluno['nome'];?>" class="form-control">
+                                        <input type="text" name="nome" value="<?=$aluno['nome'];?>" class="form-control">
                                     </div>
                                     <div class="mb-3">
                                         <label>Email do Aluno</label>
@@ -55,11 +57,11 @@ require 'dbcon.php';
                                     </div>
                                     <div class="mb-3">
                                         <label>Telefone do Aluno</label>
-                                        <input type="text" name="phone" value="<?=$aluno['telefone'];?>" class="form-control">
+                                        <input type="text" name="telefone" value="<?=$aluno['telefone'];?>" class="form-control">
                                     </div>
                                     <div class="mb-3">
                                         <label>Curso do Aluno</label>
-                                        <input type="text" name="course" value="<?=$aluno['curso'];?>" class="form-control">
+                                        <input type="text" name="curso" value="<?=$aluno['curso'];?>" class="form-control">
                                     </div>
                                     <div class="mb-3">
                                         <button type="submit" name="atualizar_aluno" class="btn btn-primary">
