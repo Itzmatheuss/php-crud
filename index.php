@@ -1,9 +1,9 @@
 <?php
+    session_start();
     require 'dbcon.php';
 ?>
-
 <!doctype html>
-<html lang="pt-br">
+<html lang="en">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -12,65 +12,78 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <title>Student Create</title>
+    <title>Student CRUD</title>
 </head>
 <body>
-    <main class="container">
+  
+    <div class="container mt-4">
+
+        <?php include('mensagem.php'); ?>
+
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Detalhes do Aluno</h4>
-                        <a href="student-create.php" class="btn btn-primary float-end">Adicionar Aluno</a>
+                        <h4>Student Details
+                            <a href="student-create.php" class="btn btn-primary float-end">Add Students</a>
+                        </h4>
                     </div>
                     <div class="card-body">
-                        <table class="table table-bordered table-stiped">
+
+                        <table class="table table-bordered table-striped">
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Nome do Aluno</th>
-                                    <th>Email do Aluno</th>
-                                    <th>Telefone do Aluno</th>
-                                    <th>Curso do Aluno</th>       
-                                    <th>Ação</th>       
+                                    <th>Student Name</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>Course</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php 
-                                $query = "SELECT * FROM alunos";
-                                $query_run = mysqli_query($con,$query);
+                                    $query = "SELECT * FROM alunos";
+                                    $query_run = mysqli_query($con, $query);
 
-                                if(mysqli_num_rows($query_run)>0){
-                                    foreach($query_run as $alunos){
-                                        ?>
-                                        <tr>
-                                            <td><?= $alunos['id'];?></td>
-                                            <td><?= $alunos['nome'];?></td>
-                                            <td><?= $alunos['email'];?></td>
-                                            <td><?= $alunos['telefone'];?></td>
-                                            <td><?= $alunos['curso'];?></td>
-                                            <td>
-                                                <a href="" class="btn btn-info btn-sm">Info</a>
-                                                <a href="studen-edit.php?id<?=$alunos['id'];?>" class="btn btn-success btn-sm">Editar</a>
-                                                <a href="" class="btn btn-danger btn-sm">Apagar</a>
-                                            </td>
-                                         </tr>
-                                        <?php
-                                       
+                                    if(mysqli_num_rows($query_run) > 0)
+                                    {
+                                        foreach($query_run as $student)
+                                        {
+                                            ?>
+                                            <tr>
+                                                <td><?= $student['id']; ?></td>
+                                                <td><?= $student['nome']; ?></td>
+                                                <td><?= $student['email']; ?></td>
+                                                <td><?= $student['telefone']; ?></td>
+                                                <td><?= $student['curso']; ?></td>
+                                                <td>
+                                                    <a href="student-view.php?id=<?= $student['id']; ?>" class="btn btn-info btn-sm">View</a>
+                                                    <a href="student-edit.php?id=<?= $student['id']; ?>" class="btn btn-success btn-sm">Edit</a>
+                                                    <form action="code.php" method="POST" class="d-inline">
+                                                        <button type="submit" name="delete_student" value="<?=$student['id'];?>" class="btn btn-danger btn-sm">Delete</button>
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                            <?php
+                                        }
                                     }
-                                }else{
-                                        echo "<h5>Nenhum dado encontrado</h5>";
-                                }
+                                    else
+                                    {
+                                        echo "<h5> No Record Found </h5>";
+                                    }
                                 ?>
                                 
                             </tbody>
                         </table>
+
                     </div>
                 </div>
             </div>
         </div>
-    </main>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
-

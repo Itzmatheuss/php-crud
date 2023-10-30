@@ -29,16 +29,24 @@ session_start();
                     </div>
                     <div class="card-body">
                         <form action="code.php" method="POST">
+                            
                             <div class="mb-3">
                                 <label for="name">Nome do Aluno</label>
-                                <input type="text" class="form-control" name="name">
+                                <input type="text" class="form-control"  name="name">
+                            </div>
+                            <div class="mb-3">
                                 <label for="email">Email do Aluno</label>
                                 <input type="email" class="form-control" name="email">
+                            </div>
+                            <div class="mb-3">
                                 <label for="phone">Telefone do Aluno</label>
                                 <input type="text" class="form-control" name="phone">
+                            </div>
+                            <div class="mb-3">
                                 <label for="curso">Curso do Aluno</label>
                                 <input type="text" class="form-control" name="curso">
                             </div>
+                            
                             <div class="mb-3">
                                 <button type="submit" name="salvar_aluno" class="btn btn-primary">Salvar Aluno</button>
                             </div>
