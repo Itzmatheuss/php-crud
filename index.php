@@ -25,7 +25,7 @@
                 <div class="card">
                     <div class="card-header">
                         <h4>Student Details
-                            <a href="student-create.php" class="btn btn-primary float-end">Add Students</a>
+                            <a href="student-create.php" class="btn btn-primary float-end">Adicionar Aluno</a>
                         </h4>
                     </div>
                     <div class="card-body">
@@ -34,11 +34,11 @@
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Student Name</th>
+                                    <th>Nome do Aluno</th>
                                     <th>Email</th>
-                                    <th>Phone</th>
-                                    <th>Course</th>
-                                    <th>Action</th>
+                                    <th>Telefone</th>
+                                    <th>Curso</th>
+                                    <th>Edições</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -48,20 +48,20 @@
 
                                     if(mysqli_num_rows($query_run) > 0)
                                     {
-                                        foreach($query_run as $student)
+                                        foreach($query_run as $aluno)
                                         {
                                             ?>
                                             <tr>
-                                                <td><?= $student['id']; ?></td>
-                                                <td><?= $student['nome']; ?></td>
-                                                <td><?= $student['email']; ?></td>
-                                                <td><?= $student['telefone']; ?></td>
-                                                <td><?= $student['curso']; ?></td>
+                                                <td><?= $aluno['id']; ?></td>
+                                                <td><?= $aluno['nome']; ?></td>
+                                                <td><?= $aluno['email']; ?></td>
+                                                <td><?= $aluno['telefone']; ?></td>
+                                                <td><?= $aluno['curso']; ?></td>
                                                 <td>
-                                                    <a href="student-view.php?id=<?= $student['id']; ?>" class="btn btn-info btn-sm">View</a>
-                                                    <a href="student-edit.php?id=<?= $student['id']; ?>" class="btn btn-success btn-sm">Edit</a>
+                                                    <a href="student-view.php?id=<?= $aluno['id']; ?>" class="btn btn-info btn-sm">Visualizar</a>
+                                                    <a href="student-edit.php?id=<?= $aluno['id']; ?>" class="btn btn-success btn-sm">Editar</a>
                                                     <form action="code.php" method="POST" class="d-inline">
-                                                        <button type="submit" name="delete_student" value="<?=$student['id'];?>" class="btn btn-danger btn-sm">Delete</button>
+                                                        <button type="submit" name="deletar_aluno" value="<?=$aluno['id'];?>" class="btn btn-danger btn-sm">Deletar</button>
                                                     </form>
                                                 </td>
                                             </tr>

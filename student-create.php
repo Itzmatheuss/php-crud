@@ -12,7 +12,7 @@ session_start();
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <title>Student Create</title>
+    <title>Criar Aluno</title>
 </head>
 <body>
     <main class="container mt-5">
@@ -31,16 +31,16 @@ session_start();
                         <form action="code.php" method="POST">
                             
                             <div class="mb-3">
-                                <label for="name">Nome do Aluno</label>
-                                <input type="text" class="form-control"  name="name">
+                                <label for="nome">Nome do Aluno</label>
+                                <input type="text" class="form-control"  name="nome">
                             </div>
                             <div class="mb-3">
                                 <label for="email">Email do Aluno</label>
                                 <input type="email" class="form-control" name="email">
                             </div>
                             <div class="mb-3">
-                                <label for="phone">Telefone do Aluno</label>
-                                <input type="text" class="form-control" name="phone">
+                                <label for="telefone">Telefone do Aluno</label>
+                                <input type="text" class="form-control" name="telefone">
                             </div>
                             <div class="mb-3">
                                 <label for="curso">Curso do Aluno</label>
