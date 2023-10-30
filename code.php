@@ -24,7 +24,7 @@ if($_POST['deletar_aluno'])
 }
 
 
-if(isset($_POST['atualizar_aluno']))
+if(isset($_POST['atualizar_aluno'])){
     $aluno_id =mysqli_real_escape_string($con,$_POST['aluno_id']);
     $nome = mysqli_real_escape_string($con,$_POST['nome']);
     $email = mysqli_real_escape_string($con,$_POST['email']);
@@ -46,7 +46,7 @@ if(isset($_POST['atualizar_aluno']))
         header("Location: index.php");
         exit(0);
     }
-
+}
 
 if(isset($_POST['salvar_aluno'])){
     $nome = mysqli_real_escape_string($con,$_POST['nome']);
